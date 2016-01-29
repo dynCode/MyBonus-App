@@ -109,6 +109,6 @@
     <!-- Define app splash screen for each platform. -->
     <splash src="splash.png" />
     
-    <access origin="*" subdomains="true" />
+    <access origin="http://myitmanager.co.za" subdomains="true" />
 
 </widget>

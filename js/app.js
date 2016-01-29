@@ -8,7 +8,7 @@
         $scope.data = [];
         
         //API URL path
-        var apiPath = 'http://demo.myitmanager.co.za/mybonusapp/api';
+        var apiPath = 'http://www.myitmanager.co.za/myBonusApp/api';
         
         //Membder Data
         $scope.userMpacc = ''; 
@@ -132,7 +132,7 @@
                     modal.hide();
                     console.log(status);
                     console.log(data);
-                    $scope.data.errorCode = 'Request failed';
+                    $scope.data.errorCode = 'Request failed' + data;
                     modal.show();
                 });
             }
@@ -203,7 +203,7 @@
                     modal.hide();
                     console.log(status);
                     console.log(data);
-                    $scope.data.errorCode = 'Request failed';
+                    $scope.data.errorCode = 'Request failed' + data;
                     modal.show();
                 });
             } else {
