@@ -1,0 +1,32 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">My Balance</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggleMenu()">
+                <ons-icon icon="ion-navicon" size="38px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner" style="text-align: center;">
+        <img src="images/app_header.png" style="max-width: 200px; width: 25%;" />
+    </div>
+    <div class="page_display_text">
+        <ons-list-item>
+            <div style="width:50%; font-weight: bold; float: left;">Current Units:</div><div style="float: left;">{{currentUnits}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:50%; font-weight: bold; float: left;">Current Rands:</div><div style="float: left;">R {{currentRands}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:50%; font-weight: bold; float: left;">Total Earned:</div><div style="float: left;">{{totalEarned}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:50%; font-weight: bold; float: left;">Total Bonus Earned:</div><div style="float: left;">{{totalBonusEarned}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:50%; font-weight: bold; float: left;">Total Used:</div><div style="float: left;">{{totalUsed}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:50%; font-weight: bold; float: left;">Total Bucks:</div><div style="float: left;">{{totalBucks}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:50%; font-weight: bold; float: left;">Total Update:</div><div style="float: left;">{{updateDate}}</div>
+            <div style="clear: both;"></div>
+        </ons-list-item>
+    </div>
+</ons-page>

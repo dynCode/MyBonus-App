@@ -1,0 +1,29 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left"></div>
+        <div class="center">MyBonus</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggleMenu()">
+                <ons-icon icon="ion-navicon" size="38px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner" style="text-align: center;">
+        <img src="images/app_header.png" style="max-width: 200px; width: 25%;" />
+    </div>
+    <div class="page_display_text">
+        <div style="text-align: center;" onclick="myNavigator.pushPage('views/users/card.html', { animation : 'slide' } )">
+            <img src="api/classes/test_1D.php?text=627864990{{newMpacc}}&mpacc={{userMpacc}}" style="max-width: 800px; width: 100%;" />
+            <br><small>Click to enlarge</small>
+        </div>
+    </div>
+    <br />
+    <div style="padding: 0 40px;">
+        
+        <ons-button modifier="large" class="reg-button" onclick="myNavigator.pushPage('views/users/balance.html', { animation : 'slide' } )">My Balance</ons-button>
+        <br>
+        <ons-button modifier="large" class="reg-button" onclick="myNavigator.pushPage('views/users/profile.html', { animation : 'slide' } )">My Profile</ons-button>
+        <br>
+        <ons-button modifier="large" class="reg-button" ng-click="getTransList();">My Statements</ons-button>
+    </div>
+</ons-page>

@@ -1,0 +1,46 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">My Profile</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggleMenu()">
+                <ons-icon icon="ion-navicon" size="38px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner" style="text-align: center;">
+        <img src="images/app_header.png" style="max-width: 200px; width: 25%;" />
+    </div>
+    <div class="page_display_text">
+        <ons-list-item>
+            <div style="width:35%; font-weight: bold; float: left;">First Name:</div><div style="float: left;">{{FirstName}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:35%; font-weight: bold; float: left;">Last Name:</div><div style="float: left;">{{LastName}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:35%; font-weight: bold; float: left;">Gender:</div><div style="float: left;">{{gender}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:35%; font-weight: bold; float: left;">Birth Date:</div><div style="float: left;">{{dob}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:35%; font-weight: bold; float: left;">Id Number:</div><div style="float: left;">{{IdNumber}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:35%; font-weight: bold; float: left;">Email Address:</div><div style="float: left;">{{EmailAddress}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:35%; font-weight: bold; float: left;">Contact Number:</div><div style="float: left;">{{ContactNumber}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:35%; font-weight: bold; float: left;">Province:</div><div style="float: left;">{{Province}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:35%; font-weight: bold; float: left;">City:</div><div style="float: left;">{{City}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:35%; font-weight: bold; float: left;">Suburb:</div><div style="float: left;">{{Suburb}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:35%; font-weight: bold; float: left;">Address 1:</div><div style="float: left;">{{Addressline1}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:35%; font-weight: bold; float: left;">Address 2:</div><div style="float: left;">{{Addressline2}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:35%; font-weight: bold; float: left;">Address 3:</div><div style="float: left;">{{Addressline3}}</div>
+            <div style="clear: both;"></div>
+            <div style="width:35%; font-weight: bold; float: left;">Postal Code:</div><div style="float: left;">{{postalCode}}</div>
+            <div style="clear: both;"></div>
+        </ons-list-item>
+    </div>
+</ons-page>

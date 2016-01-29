@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- CSP support mode (required for Windows Universal apps): https://docs.angularjs.org/api/ng/directive/ngCsp -->
+<html lang="en" ng-app="app" ng-csp>
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- JS dependencies (order matters!) -->
+    <script src="js/angular/angular.js"></script>
+    <script src="js/onsenui.js"></script>
+    <!--<script src="js/autocomplete.js"></script>-->
+    <script src="js/app.js"></script>
+
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="css/onsenui.css" />
+    <link rel="stylesheet" href="css/onsen-css-components.css" />
+    <!--<link rel="stylesheet" href="css/autocomplete.css">-->
+    <link rel="stylesheet" href="css/app.css" />
+
+    <!-- CSP support mode (required for Windows Universal apps) -->
+    <link rel="stylesheet" href="js/angular/angular-csp.css" />
+
+
+    <!-- --------------- App init --------------- -->
+
+    <title>My Bonus</title>
+
+</head>
+
+<body ng-controller="AppController">
+    <!-- Cordova reference -->
+    <script src="cordova.js"></script>
+    <script src="scripts/index.js"></script>
+    <!-- -->
+    
+    <ons-tabbar>
+        <ons-tab active="true" page="hoge.html">
+            <div class="tab" id="hidemytab">
+                <ons-icon icon="ion-home" class="tab-icon"></ons-icon>
+            </div>
+        </ons-tab>
+        <ons-tab page="views/tandc.html">
+            <div class="tab" id="hidemytab">
+                <span style="font-size: 14px">Terms and conditions</span>
+            </div>
+        </ons-tab>
+    </ons-tabbar>
+    <ons-modal var="modal" ng-click="modal.hide()">
+        <br>
+        <br>{{data.errorCode}}
+        <br>
+    </ons-modal>
+    <script type="text/ons-template" id="hoge.html">
+        <ons-sliding-menu main-page="views/home.html" menu-page="views/menu.html" max-slide-distance="260px" type="push" side="right" var="menu">
+        </ons-sliding-menu>
+    </script>
+    <script>
+        document.addEventListener("pageinit", function(e) {
+            //console.log(e.target.id);
+            
+            if (e.target.id == "home-page") {
+                document.getElementById("hidemytab").style.display = "none";
+            } else {
+                document.getElementById("hidemytab").style.display = "inline-block";
+            }
+        }, false);
+    </script>
+</body>
+</html>

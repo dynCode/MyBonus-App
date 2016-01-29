@@ -1,0 +1,35 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">Partners</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggleMenu()">
+                <ons-icon icon="ion-navicon" size="38px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner" style="text-align: center;">
+        <img src="images/app_header.png" style="max-width: 200px; width: 25%;" />
+    </div>
+    <div class="page_display_text">
+        <h4 class="myHeader"><span>Partners:</span></h4>
+        <ons-list>
+            <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="partner in groupPartnerList">
+                <ons-row>
+                    <ons-col>
+                        <div class="name">
+                            {{partner.PartnerName}}
+                        </div>
+                        <div class="location">
+                          <i class="fa fa-map-marker"></i> {{partner.Phys_Adres}},<br />{{partner.City}},<br />{{partner.Province}}
+                        </div>
+                        <div class="desc">
+                            <i class="fa fa-phone"></i> {{partner.Tel}}
+                        </div>
+                    </ons-col>
+                    <ons-col width="40px"></ons-col>
+                </ons-row>
+            </ons-list-item>
+        </ons-list>
+    </div>
+</ons-page>

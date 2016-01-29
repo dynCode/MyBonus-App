@@ -1,0 +1,47 @@
+<ons-page modifier="menu-page">
+    <ons-toolbar modifier="transparent">
+      <div class="right">
+        <ons-toolbar-button class="menu-close" ng-click="menu.close()">
+          <ons-icon icon="ion-close-circled"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+    <h4 class="menu-header">YOUR LINKS</h4>
+    <ons-list class="bottom-menu-list">
+        <div ng-hide="loggedIn">
+            <ons-list-item class="bottom-menu-item"  onclick="myNavigator.pushPage('views/register.html', { animation : 'slide' } )" ng-click="menu.close()">
+                Quick Registration <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
+            </ons-list-item>
+            <ons-list-item class="bottom-menu-item" ng-click="menu.close(); checkLogin();">
+                Login <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
+            </ons-list-item>
+        </div>
+        <div ng-show="loggedIn">
+            <ons-list-item class="bottom-menu-item" ng-click="menu.close(); checkLogin();">
+                My Card <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
+            </ons-list-item>
+            <ons-list-item class="bottom-menu-item" onclick="myNavigator.pushPage('views/users/balance.html', { animation : 'slide' } )" ng-click="menu.close()">
+                My Balance <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
+            </ons-list-item>
+            <ons-list-item class="bottom-menu-item" onclick="myNavigator.pushPage('views/users/Profile.html', { animation : 'slide' } )" ng-click="menu.close()">
+                My Profile <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
+            </ons-list-item>
+            <ons-list-item class="bottom-menu-item" ng-click="logout(); menu.close();">
+                Log Out <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
+            </ons-list-item>
+        </div>
+        
+    </ons-list>
+    <h4 class="menu-header">QUICK LINKS</h4>
+    <ons-list class="bottom-menu-list">
+        <ons-list-item class="bottom-menu-item" onclick="myNavigator.pushPage('views/works.html', { animation : 'slide' } )" ng-click="menu.close()">
+            How it works <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
+        </ons-list-item>
+        <ons-list-item class="bottom-menu-item" ng-click="menu.close(); getCatList();">
+            Locate a partner <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
+        </ons-list-item>
+        <ons-list-item class="bottom-menu-item" onclick="myNavigator.pushPage('views/contact.html', { animation : 'slide' } )" ng-click="menu.close()">
+            Contact Us <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
+        </ons-list-item>
+    </ons-list>
+</ons-page>

@@ -1,0 +1,32 @@
+$background-color = #ffffff
+$text-color = #1f1f21
+$sub-text-color = #999
+$highlight-color = rgba(17,107,181,0.81)
+$second-highlight-color = #0b9a49
+$border-color = #ddd
+$toolbar-background-color = #116bb5
+$toolbar-button-color = #ffffff
+$toolbar-text-color = #ffffff
+$toolbar-border-color = #116bb5
+$buttonbar-color = rgba(17,107,181,0.77)
+$buttonbar-active-text-color = #fff
+$list-background-color = #ffffff
+$list-header-background-color = #eee
+$list-tap-active-background-color = #d9d9d9
+$tabbar-background-color = #116bb5
+$tabbar-text-color = #eeeeee
+$tabbar-highlight-text-color = #7abfff
+$tabbar-border-color = rgba(0,0,0,.0)
+$switch-highlight-color = #5198db
+$modal-background-color = rgba(0, 0, 0, 0.7)
+$modal-text-color = #fff
+$alert-dialog-background-color = rgba(255, 255, 255, 0.92)
+$alert-dialog-text-color = #1f1f21
+$alert-dialog-button-color = rgba(24,103,194,0.81)
+$alert-dialog-separator-color = #ddd
+$dialog-background-color = rgba(255, 255, 255, 0.92)
+$popover-background-color = white
+$popover-text-color = #1f1f21
+$notification-background-color = #f87f18
+
+@import 'components'

@@ -1,0 +1,252 @@
+.page__background {
+    background-image: url("../images/Mobile_Payment.jpg");
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: cover;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: #FCFCFC;
+}
+
+.page--menu-page__background {
+  background-color: #F2F0F1;
+  color: #000;
+  background-image:none;
+}
+
+.menu-close,
+.menu-close > .toolbar-button {
+  color: #999;
+}
+
+.menu-list,
+.menu-item:first-child,
+.menu-item {
+  background-color: transparent;
+  background-image: none !important;
+  border-color: transparent;
+  color: #fff;
+}
+
+.menu-item {
+  padding: 0 0 0 20px;
+  line-height: 52px;
+  height: 52px;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
+}
+
+.menu-item:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-notification {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 14px;
+  height: 16px;
+  line-height: 16px;
+  min-width: 16px;
+  font-weight: 600;
+}
+
+.bottom-menu-list,
+.bottom-menu-item:first-child,
+.bottom-menu-item {
+  border-color: #b7b7b7;
+  background-color: transparent;
+  background-image: none !important;
+  color: #000;
+  padding: 0 10px;
+}
+
+.bottom-menu-item:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-row {
+  margin: 4px;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-half {
+  width: 48%;
+}
+
+.lucent {
+  opacity: 0.4;
+}
+
+.note {
+  margin: 12px 8px;
+  font-size: 13px;
+}
+
+.vspc {
+  margin-top: 20px;
+}
+
+.formarea {
+  width: 90%;
+  margin: 0px auto 0px auto;
+}
+
+input[type=text],
+input[type=password],
+select{
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin: 5px 0;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+}
+
+.genderSelect {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+}
+
+.genderSelect .button-bar__item {
+    border-color: #fff;
+}
+
+.genderSelect .button-bar__button {
+    color: #fff;
+    font-size: 15px;
+    height: auto;
+    line-height: 30px;
+}
+
+.textarea--underbar {
+    height: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin: 5px 0;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+}
+
+.login-form {
+  width: 90%;
+  margin: 50px auto 0px auto;
+}
+
+.login-button {
+  width: 100%;
+  margin: 0 auto;
+  color: #000;
+  background-color: rgba(256,256,256,0.8);
+  border: 2px solid #f27947;
+  border-radius: 10px;
+}
+
+.reg-button {
+  width: 100%;
+  margin: 0 auto;
+  color: #000;
+  background-color: rgba(256,256,256,0.8);
+  border: 2px solid #f27947;
+  border-radius: 10px;
+}
+
+.forgot-password {
+  display: block;
+  margin: 8px auto 0 auto;
+  font-size: 14px;
+}
+
+.list-item-container {
+  line-height: 1;
+  padding: 15px 0px 15px 15px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.name {
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.location {
+  font-size: 14px;
+  opacity: 0.4;
+  margin-bottom: 6px;
+}
+
+.desc {
+  line-height: 1.2;
+  font-size: 13px;
+}
+
+.topBanner {
+    background-color: #fff;
+    /* border-bottom: 1px solid #f3f3f3; */
+    /* box-shadow: 0 5px 10px -6px black; */
+    /* margin-bottom: 20px; */
+    margin: 20px 40px;
+    border: 2px solid #F4793E;
+    border-radius: 5px;
+}
+
+.list {
+    background-color: transparent;
+}
+
+.ion-home {
+    font-size: 40px;
+    background: #115EA9;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #115EA9;
+    border-radius: 50px;
+    line-height: 50px;
+    margin-top: -25px;
+    display: block;
+    position: fixed;
+    z-index: 123;
+    color: #fff;
+    left: 10px;
+    bottom: 10px;
+}
+
+.bottom-menu-item-icon {
+    float: right;
+    font-size: 30px;
+    vertical-align: bottom;
+    color: #999;
+    line-height: 40px;
+}
+
+.menu-header {
+    background-color: #b7b7b7;
+    line-height: 30px;
+    font-size: 16px;
+    padding-left: 10px;
+    color: #777777;
+}
+
+.page_display_text {
+    margin: 0 40px;
+    background-color: rgba(256,256,256,0.9);
+    border-radius: 10px;
+    padding-bottom: 10px;
+}

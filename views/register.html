@@ -1,0 +1,98 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">Register</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="menu.toggleMenu()">
+                <ons-icon icon="ion-navicon" size="38px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="topBanner" style="text-align: center;">
+        <img src="images/app_header.png" style="max-width: 200px; width: 25%;" />
+    </div>
+    <div style="padding: 0 20px;">
+        <h4 style="padding-left: 20px;">Register</h4>
+        <div class="formarea">
+            <div class="form-row">
+                <input type="text" class="text-input--underbar width-full" placeholder="First Name" value="">
+            </div>
+
+            <div class="form-row">
+                <input type="text" class="text-input--underbar width-full" placeholder="Last Name" value="">
+            </div>
+
+            <div class="form-row">
+                <div class="button-bar genderSelect" style="width:100%;">
+                    <label class="button-bar__item">
+                        <input type="radio" name="gender" ng-model="gender" value="M">
+                        <button class="button-bar__button">Male</button>
+                    </label>
+                    <label class="button-bar__item">
+                        <input type="radio" name="gender" ng-model="gender" value="F">
+                        <button class="button-bar__button">Female</button>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <select ng-model="title" style="width:100%;">
+                    <option value="">Select your Tilte</option>
+                    <option value="MR">Mr</option>
+                    <option value="MRS">Mrs</option>
+                    <option value="MISS">Miss</option>
+                    <option value="MS">Ms</option>
+                    <option value="PROF">Professor</option>
+                    <option value="DOCT">Doctor</option>
+                    <option value="HE">His Excellency</option>
+                    <option value="HON">Honorable</option>
+                    <option value="OTHE">Other</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <input type="text" class="text-input--underbar width-full" placeholder="Id Number" value="">
+            </div>
+
+            <div class="form-row">
+                <input type="text" class="text-input--underbar width-full" placeholder="Email Address" value="">
+            </div>
+
+            <div class="form-row">
+                <input type="text" class="text-input--underbar width-full" placeholder="Contact Number" value="">
+            </div>
+
+            <div class="form-row">
+                <input type="text" class="text-input--underbar width-full" placeholder="Province" value="">
+            </div>
+            
+            <div class="form-row">
+                <input type="text" class="text-input--underbar width-full" placeholder="City" value="">
+            </div>
+            
+            <div class="form-row">
+                <input type="text" class="text-input--underbar width-full" placeholder="Suburb" value="">
+            </div>
+            
+            <div class="form-row">
+                <input type="text" class="text-input--underbar width-full" placeholder="Address line 1" value="">
+            </div>
+            
+            <div class="form-row">
+                <input type="text" class="text-input--underbar width-full" placeholder="Address line 2 (optional)" value="">
+            </div>
+            
+            <div class="form-row">
+                <input type="text" class="text-input--underbar width-full" placeholder="Address line 3 (optional)" value="">
+            </div>
+
+            <!--<div class="form-row">
+                <autocomplete ng-model="yourchoice" data="movies" on-type="updateMovies"></autocomplete>
+            </div>-->
+            
+            <div class="vspc form-row" style="margin-bottom: 20px;">
+                <ons-button modifier="large" class="reg-button">Register</ons-button>
+            </div>
+        </div>
+    </div>
+</ons-page>
