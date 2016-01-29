@@ -43,14 +43,15 @@
             </div>
         </ons-tab>
     </ons-tabbar>
-    <ons-modal var="modal" ng-click="modal.hide()">
-        <br>
-        <br>{{data.errorCode}}
-        <br>
-    </ons-modal>
+    
     <script type="text/ons-template" id="hoge.html">
         <ons-sliding-menu main-page="views/home.html" menu-page="views/menu.html" max-slide-distance="260px" type="push" side="right" var="menu">
         </ons-sliding-menu>
+        <ons-modal var="modal" ng-click="modal.hide()">
+            <br>
+            <br>{{data.errorCode}}
+            <br>
+        </ons-modal>
     </script>
     <script>
         document.addEventListener("pageinit", function(e) {
