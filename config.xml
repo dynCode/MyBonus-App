@@ -103,6 +103,18 @@
     <!-- Define app splash screen for each platform. -->
     <splash src="splash.png" />
     
-    <access origin="http://www.myitmanager.co.za" subdomains="true" />
-
+    <!-- Whitelisting access -->
+    <access origin="*" />
+    <allow-navigation href="http://*/*" />
+    <allow-navigation href="https://*/*" />
+    <allow-navigation href="data:*" />
+    <!-- Allow SMS links to open messaging app -->
+    <allow-intent href="sms:*" />
+    <!-- Allow tel: links to open the dialer -->
+    <allow-intent href="tel:*" />
+    <!-- Allow geo: links to open maps -->
+    <allow-intent href="geo:*" />
+    <!-- Allow links to web pages to open in a browser -->
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
 </widget>
