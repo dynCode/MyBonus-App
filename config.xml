@@ -87,6 +87,7 @@
     <!--
         <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     -->
+    <plugin name="cordova-plugin-whitelist" />
     <gap:plugin name="com.phonegap.plugin.statusbar" />
     <gap:config-file platform="ios" parent="UIStatusBarHidden">
         <true/>
