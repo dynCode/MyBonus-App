@@ -11,14 +11,11 @@
     <div class="topBanner" style="text-align: center;">
         <img src="images/app_header.png" style="max-width: 200px; width: 25%;" />
     </div>
-    <div class="page_display_text">
+    <div class="page_display_text" style="font-size: 12px;">
         <ons-list-item ng-repeat="trans in transList">
-            <div style="width:25%; font-weight: bold; float: left;">Label</div><div style="float: left;">{{trans.label}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:25%; font-weight: bold; float: left;">Date</div><div style="float: left;">{{trans.transactionDate}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:25%; font-weight: bold; float: left;">Points</div><div style="float: left;">{{trans.transactionPoints}}</div>
-            <div style="clear: both;"></div>
+            <p style="line-height: 20px;"><strong>Description</strong><br />{{trans.label}}</p>
+            <p style="line-height: 20px;"><strong>Date</strong><br />{{trans.transactionDate}}</p>
+            <p style="line-height: 20px;"><strong>Bucks</strong><br />{{trans.transactionPoints}}</p>
         </ons-list-item>
     </div>
 </ons-page>

@@ -11,36 +11,23 @@
     <div class="topBanner" style="text-align: center;">
         <img src="images/app_header.png" style="max-width: 200px; width: 25%;" />
     </div>
-    <div class="page_display_text">
-        <ons-list-item>
-            <div style="width:35%; font-weight: bold; float: left;">First Name:</div><div style="float: left;">{{FirstName}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:35%; font-weight: bold; float: left;">Last Name:</div><div style="float: left;">{{LastName}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:35%; font-weight: bold; float: left;">Gender:</div><div style="float: left;">{{gender}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:35%; font-weight: bold; float: left;">Birth Date:</div><div style="float: left;">{{dob}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:35%; font-weight: bold; float: left;">Id Number:</div><div style="float: left;">{{IdNumber}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:35%; font-weight: bold; float: left;">Email Address:</div><div style="float: left;">{{EmailAddress}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:35%; font-weight: bold; float: left;">Contact Number:</div><div style="float: left;">{{ContactNumber}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:35%; font-weight: bold; float: left;">Province:</div><div style="float: left;">{{Province}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:35%; font-weight: bold; float: left;">City:</div><div style="float: left;">{{City}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:35%; font-weight: bold; float: left;">Suburb:</div><div style="float: left;">{{Suburb}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:35%; font-weight: bold; float: left;">Address 1:</div><div style="float: left;">{{Addressline1}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:35%; font-weight: bold; float: left;">Address 2:</div><div style="float: left;">{{Addressline2}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:35%; font-weight: bold; float: left;">Address 3:</div><div style="float: left;">{{Addressline3}}</div>
-            <div style="clear: both;"></div>
-            <div style="width:35%; font-weight: bold; float: left;">Postal Code:</div><div style="float: left;">{{postalCode}}</div>
-            <div style="clear: both;"></div>
-        </ons-list-item>
+    <div class="page_display_text" style="font-size: 12px; padding: 10px;">
+        <p style="line-height: 20px;"><strong>First Name:</strong><br />{{FirstName}}</p>
+        <p style="line-height: 20px;"><strong>Last Name:</strong><br />{{LastName}}</p>
+        <p style="line-height: 20px;"><strong>Gender:</strong><br />{{gender}}</p>
+        <p style="line-height: 20px;"><strong>Birth Date:</strong><br />{{dob}}</p>
+        <p style="line-height: 20px;"><strong>Id Number:</strong><br />{{IdNumber}}</p>
+        <p style="line-height: 20px;"><strong>Email Address:</strong><br />{{EmailAddress}}</p>
+        <p style="line-height: 20px;"><strong>Contact Number:</strong><br />{{ContactNumber}}</p>
+        <p style="line-height: 20px;"><strong>Address 1:</strong><br />{{Addressline1}}</p>
+        <p style="line-height: 20px;"><strong>Address 2:</strong><br />{{Addressline2}}</p>
+        <p style="line-height: 20px;"><strong>Address 3:</strong><br />{{Addressline3}}</p>
+        <p style="line-height: 20px;"><strong>Suburb:</strong><br />{{Suburb}}</p>
+        <p style="line-height: 20px;"><strong>City:</strong><br />{{City}}</p>
+        <p style="line-height: 20px;"><strong>Province:</strong><br />{{Province}}</p>
+        <p style="line-height: 20px;"><strong>Postal Code:</strong><br />{{postalCode}}</p>
+    </div>
+    <div style="font-size: 12px; margin: 20px 40px 20px 40px; width: inherit;">
+        <ons-button modifier="large" class="reg-button" ng-click="SetupUpdate()">Update Details</ons-button>   
     </div>
 </ons-page>
