@@ -191,7 +191,7 @@
                 })
                 .error(function(data, status) {
                     modal.hide();
-                    $scope.data.errorCode = 'Request failed' + data;
+                    $scope.data.errorCode = 'Request failed' + data + status;
                     modal.show();
                 });
             } else {

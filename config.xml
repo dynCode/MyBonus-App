@@ -80,14 +80,7 @@
     </platform>
  
     <feature name="http://api.phonegap.com/1.0/network" />
-    <feature name="http://api.phonegap.com/1.0/camera" />
-    <feature name="http://api.phonegap.com/1.0/notification" />
     <feature name="http://api.phonegap.com/1.0/geolocation" />
-    <feature name="http://api.phonegap.com/1.0/media" />
-    <feature name="http://api.phonegap.com/1.0/contacts" />
-    <feature name="http://api.phonegap.com/1.0/file" />
-    <feature name="http://api.phonegap.com/1.0/battery" />
-    <feature name="http://api.phonegap.com/1.0/device" />
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
@@ -109,6 +102,6 @@
     <!-- Define app splash screen for each platform. -->
     <splash src="splash.png" />
     
-    <access origin="http://myitmanager.co.za" subdomains="true" />
+    <access origin="http://www.myitmanager.co.za" subdomains="true" />
 
 </widget>
