@@ -99,21 +99,46 @@
 input[type=text],
 input[type=password],
 select{
-    height: 40px;
+    height: 52px;
     padding-top: 10px;
     padding-bottom: 10px;
     border: 2px solid #fff;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     margin: 5px 0;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
+    background: rgba(256,256,256,0.9);
+    color: #000;
+    box-shadow: 0 5px 10px -6px black;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #000;
+    font-weight: 500;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #000;
+   opacity:  1;
+   font-weight: 500;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #000;
+   opacity:  1;
+   font-weight: 500;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #000;
+   font-weight: 500;
+}
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+    color:    #000;
+    font-weight: 500;
 }
 
 .genderSelect {
-    border: 2px solid #fff;
-    border-radius: 10px;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
+    border: 0px solid #fff;
+    /*border-radius: 10px;*/
+    background: rgba(256,256,256,0.9);
+    color: #000;
+    box-shadow: 0 5px 10px -6px black;
 }
 
 .genderSelect .button-bar__item {
@@ -121,10 +146,10 @@ select{
 }
 
 .genderSelect .button-bar__button {
-    color: #fff;
+    color: #000;
     font-size: 15px;
     height: auto;
-    line-height: 30px;
+    line-height: 50px;
 }
 
 .textarea--underbar {
@@ -132,10 +157,10 @@ select{
     padding-top: 10px;
     padding-bottom: 10px;
     border: 2px solid #fff;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     margin: 5px 0;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
+    background: rgba(256,256,256,0.9);
+    color: #000;
 }
 
 .login-form {
@@ -147,18 +172,22 @@ select{
   width: 100%;
   margin: 0 auto;
   color: #000;
-  background-color: rgba(256,256,256,0.8);
+  background-color: rgba(256,256,256,0.9);
   border: 2px solid #f27947;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
+  text-align: left;
+  box-shadow: 0 5px 10px -6px black;
 }
 
 .reg-button {
   width: 100%;
   margin: 0 auto;
   color: #000;
-  background-color: rgba(256,256,256,0.8);
+  background-color: rgba(256,256,256,0.9);
   border: 2px solid #f27947;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
+  text-align: left;
+  box-shadow: 0 5px 10px -6px black;
 }
 
 .forgot-password {
@@ -175,15 +204,22 @@ select{
 .thumbnail {
   width: 80px;
   height: 80px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
+  /*border-radius: 4px;
+  -webkit-border-radius: 4px;*/
 }
 
 .name {
-  font-weight: 500;
-  line-height: 16px;
-  font-size: 15px;
-  margin-bottom: 6px;
+    font-weight: 500;
+    line-height: 25px;
+    font-size: 19px;
+    margin: 10px 0 6px 0;
+}
+
+.name img {
+    vertical-align: middle;
+    background-color: #F27947;
+    padding: 9px;
+    margin: -14px 5px -14px -12px;
 }
 
 .location {
@@ -194,17 +230,17 @@ select{
 
 .desc {
   line-height: 1.2;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .topBanner {
     background-color: #fff;
     /* border-bottom: 1px solid #f3f3f3; */
-    /* box-shadow: 0 5px 10px -6px black; */
+    box-shadow: 0 5px 10px -6px black;
     /* margin-bottom: 20px; */
-    margin: 20px 40px;
-    border: 2px solid #F4793E;
-    border-radius: 5px;
+    /*margin: 20px 40px;*/
+    /*border: 2px solid #F4793E;*/
+    /*border-radius: 5px;*/
 }
 
 .list {
@@ -245,8 +281,51 @@ select{
 }
 
 .page_display_text {
-    margin: 0 40px;
     background-color: rgba(256,256,256,0.9);
-    border-radius: 10px;
     padding-bottom: 10px;
+}
+
+.button img {
+    vertical-align: middle;
+    background-color: #F27947;
+    padding: 9px;
+    margin: -14px 5px -14px -12px;
+}
+
+.imgOver {
+    position: relative;
+    top: 55px;
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    opacity: 0.9;
+    background: #fff url('../images/icons/zoom_in.png') no-repeat 50%;
+    z-index: 0;
+    padding: 5px;
+}
+
+.imgCard {
+    max-width: 800px; 
+    width: 100%;
+    margin-top: -60px;
+    margin-bottom: -15px;
+}
+
+.list__item--partnerList {
+    box-shadow: 0 5px 10px -6px black;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.homePageBanImg {
+    max-width: 800px; width: 100%;
+}
+
+.otherPageBanImg {
+    max-width: 200px; width: 35%;
+}
+
+.button--large {
+    font-size: 19px;
+    line-height: 40px;
 }

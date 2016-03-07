@@ -9,21 +9,21 @@
         </div>
     </ons-toolbar>
     <div class="topBanner" style="text-align: center;">
-        <img src="images/app_header.png" style="max-width: 200px; width: 25%;" />
+        <img src="images/app_header.png" class="otherPageBanImg" />
     </div>
     <div class="page_display_text">
         <div style="text-align: center;" onclick="myNavigator.pushPage('views/users/card.html', { animation : 'slide' } )">
-            <img src="http://www.myitmanager.co.za/myBonusApp/api/classes/test_1D.php?text=627864990{{newMpacc}}&mpacc={{userMpacc}}" style="max-width: 800px; width: 100%;" />
-            <br><small>Click to enlarge</small>
+            <div class="imgOver"></div>
+            <img src="http://www.myitmanager.co.za/myBonusApp/api/classes/test_1D.php?text=627864990{{newMpacc}}&mpacc={{userMpacc}}" class="imgCard" />
         </div>
     </div>
     <br />
-    <div style="padding: 0 40px;">
+    <div style="padding: 0 20px;">
         
-        <ons-button modifier="large" class="reg-button" onclick="myNavigator.pushPage('views/users/balance.html', { animation : 'slide' } )">My Balance</ons-button>
+        <ons-button modifier="large" class="reg-button" onclick="myNavigator.pushPage('views/users/balance.html', { animation : 'slide' } )"><img src="images/icons/ballance.png"/> My Balance</ons-button>
         <br>
-        <ons-button modifier="large" class="reg-button" onclick="myNavigator.pushPage('views/users/profile.html', { animation : 'slide' } )">My Profile</ons-button>
+        <ons-button modifier="large" class="reg-button" onclick="myNavigator.pushPage('views/users/profile.html', { animation : 'slide' } )"><img src="images/icons/profile.png"/> My Profile</ons-button>
         <br>
-        <ons-button modifier="large" class="reg-button" ng-click="getTransList();">My Statements</ons-button>
+        <ons-button modifier="large" class="reg-button" ng-click="getTransList();"><img src="images/icons/transactions.png"/> Last 10 Transaction</ons-button>
     </div>
 </ons-page>

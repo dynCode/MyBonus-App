@@ -217,6 +217,7 @@
             $http.post(apiPath + '/catList.php', {"reqType" : "listCat", "partnerCat" : "catList"})
             .success(function(data, status){
                 modal.hide();
+                console.log(data);
                 $scope.catList = data;
                 if (data) {
                     myNavigator.pushPage('views/partners/partnerCats.html', { animation : 'fade'});

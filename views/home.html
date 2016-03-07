@@ -10,18 +10,18 @@
             </div>
         </ons-toolbar>
         <div class="topBanner" style="text-align: center;">
-            <img src="images/app_header.png" style="max-width: 800px; width: 100%;" />
+            <img src="images/app_header.png" class="homePageBanImg" />
         </div>
         
         <div style="padding: 0 20px;">
             <div class="login-form" ng-init="init()">
 
-                <input type="text" class="text-input--underbar width-full" ng-model="data.loyaltyNum" placeholder="MPacc" value="">
-                <input type="password" class="text-input--underbar width-full" ng-model="data.password" placeholder="Password" value="">
+                <input type="text" class="text-input--underbar width-full" ng-model="data.loyaltyNum" placeholder="Type in Membership Number here" value="">
+                <input type="password" class="text-input--underbar width-full" ng-model="data.password" placeholder="Type in Password here" value="">
                 <br><br>
-                <ons-button modifier="large" class="login-button" ng-click="LogIn()">Log In</ons-button>
+                <ons-button modifier="large" class="login-button" ng-click="LogIn()"><img src="images/icons/unlock.png"/> Log In</ons-button>
                 <br>
-                <ons-button modifier="large" class="reg-button" ng-click="myNavigator.pushPage('views/register.html', { animation : 'slide' } )">Register</ons-button>
+                <ons-button modifier="large" class="reg-button" ng-click="myNavigator.pushPage('views/register.html', { animation : 'slide' } )"><img src="images/icons/new_user.png"/> Register</ons-button>
             </div>
             <!--
             <ul class="list">

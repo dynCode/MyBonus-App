@@ -9,12 +9,12 @@
         </div>
     </ons-toolbar>
     <div class="topBanner" style="text-align: center;">
-        <img src="images/app_header.png" style="max-width: 200px; width: 25%;" />
+        <img src="images/app_header.png" class="otherPageBanImg" />
     </div>
-    <div class="page_display_text">
-        <h4 class="myHeader"><span>Partners:</span></h4>
+    <div class="page_display_text" style="padding-top: 10px;">
+        <h4 style="padding-left: 10px;">Partners:</h4>
         <ons-list>
-            <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="partner in groupPartnerList">
+            <ons-list-item modifier="partnerList" class="list-item-container" ng-repeat="partner in groupPartnerList">
                 <ons-row>
                     <ons-col>
                         <div class="name">
