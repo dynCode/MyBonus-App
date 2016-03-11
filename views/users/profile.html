@@ -11,23 +11,51 @@
     <div class="topBanner" style="text-align: center;">
         <img src="images/app_header.png" class="otherPageBanImg" />
     </div>
-    <div class="page_display_text" style="font-size: 12px; padding: 10px;">
-        <p style="line-height: 20px;"><strong>First Name:</strong><br />{{FirstName}}</p>
-        <p style="line-height: 20px;"><strong>Last Name:</strong><br />{{LastName}}</p>
-        <p style="line-height: 20px;"><strong>Gender:</strong><br />{{gender}}</p>
-        <p style="line-height: 20px;"><strong>Birth Date:</strong><br />{{dob}}</p>
-        <p style="line-height: 20px;"><strong>Id Number:</strong><br />{{IdNumber}}</p>
-        <p style="line-height: 20px;"><strong>Email Address:</strong><br />{{EmailAddress}}</p>
-        <p style="line-height: 20px;"><strong>Contact Number:</strong><br />{{ContactNumber}}</p>
-        <p style="line-height: 20px;"><strong>Address 1:</strong><br />{{Addressline1}}</p>
-        <p style="line-height: 20px;"><strong>Address 2:</strong><br />{{Addressline2}}</p>
-        <p style="line-height: 20px;"><strong>Address 3:</strong><br />{{Addressline3}}</p>
-        <p style="line-height: 20px;"><strong>Suburb:</strong><br />{{Suburb}}</p>
-        <p style="line-height: 20px;"><strong>City:</strong><br />{{City}}</p>
-        <p style="line-height: 20px;"><strong>Province:</strong><br />{{Province}}</p>
-        <p style="line-height: 20px;"><strong>Postal Code:</strong><br />{{postalCode}}</p>
+    <div class="page_display_text" style="padding: 10px;">
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>First Name:</strong></ons-col><ons-col>{{FirstName}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>Last Name:</strong></ons-col><ons-col>{{LastName}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>Gender:</strong></ons-col><ons-col>{{gender}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>Birth Date:</strong></ons-col><ons-col>{{dob}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>Id Number:</strong></ons-col><ons-col>{{IdNumber}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>Email Address:</strong></ons-col><ons-col>{{EmailAddress}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>Contact Number:</strong></ons-col><ons-col>{{ContactNumber}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>Address 1:</strong></ons-col><ons-col>{{Addressline1}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>Address 2:</strong></ons-col><ons-col>{{Addressline2}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>Address 3:</strong></ons-col><ons-col>{{Addressline3}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>Suburb:</strong></ons-col><ons-col>{{Suburb}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>City:</strong></ons-col><ons-col>{{City}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>Province:</strong></ons-col><ons-col>{{Province}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col><strong>Postal Code:</strong></ons-col><ons-col>{{postalCode}}</ons-col>
+        </ons-row>
     </div>
     <div style="font-size: 12px; margin: 20px 40px 20px 40px; width: inherit;">
-        <ons-button modifier="large" class="reg-button" ng-click="SetupUpdate()">Update Details</ons-button>   
+        <ons-button modifier="large" class="reg-button" ng-click="SetupUpdate()"><img src="images/icons/profile.png"/> Update Details</ons-button>   
     </div>
 </ons-page>

@@ -9,9 +9,41 @@
         </div>
     </ons-toolbar>
     <div class="topBanner" style="text-align: center;">
-        <img src="images/app_header.png" sclass="otherPageBanImg" />
+        <img src="images/app_header.png" class="otherPageBanImg" />
     </div>
-    <div class="page_display_text" style="font-size: 12px;">
+    <div class="page_display_text" style="padding:10px;">
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col style="width:55%;"><strong>As on:</strong></ons-col>
+            <ons-col>{{updateDate}}</ons-col>
+        </ons-row>
+        <!--
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col style="width:55%;"><strong>MyBucks Available:</strong></ons-col>
+            <ons-col>{{currentUnits}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col style="width:55%;"><strong>Rands Available:</strong></ons-col>
+            <ons-col>R {{currentRands}}</ons-col>
+        </ons-row>
+        <p>&nbsp;</p>
+        -->
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col style="width:55%;"><strong>Bucks Earned:</strong></ons-col>
+            <ons-col>+ {{totalEarned}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col style="width:55%;"><strong>Bonus Bucks Earned:</strong></ons-col>
+            <ons-col>+ {{totalBonusEarned}}</ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col style="width:55%;"><strong>Bucks Used:</strong></ons-col>
+            <ons-col><div style="border-bottom: 1px solid #000; width: 40%;">- {{totalUsed}}</div></ons-col>
+        </ons-row>
+        <ons-row align="bottom" style="padding: 5px 0px;">
+            <ons-col style="width:55%;"><strong>Total Bucks:</strong></ons-col>
+            <ons-col><div style="border-bottom: 2px solid #000; width: 40%; font-weight: bold;">= {{totalBucks}}</div></ons-col>
+        </ons-row>
+        <!--
         <ons-list-item>
             <div style="width:55%; font-weight: bold; float: left;">As on:</div><div style="float: left;">{{updateDate}}</div>
             <div style="clear: both;"></div>
@@ -29,5 +61,6 @@
             <div style="width:55%; font-weight: bold; float: left;">Total Bucks:</div><div style="float: left; border-bottom: 2px solid #000; width: 40%; font-weight: bold;">= {{totalBucks}}</div>
             <div style="clear: both;"></div>
         </ons-list-item>
+        -->
     </div>
 </ons-page>

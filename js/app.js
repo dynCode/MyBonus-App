@@ -64,12 +64,12 @@
             var pass = $window.localStorage.getItem('userPass'); 
             
             if (user && pass) {
-                modal.show();
-                $scope.data.errorCode = 'Processing, please wait...';
+                //modal.show();
+                //$scope.data.errorCode = 'Processing, please wait...';
                 $http.post(apiPath + '/login.php', {"reqType" : "login", "user" : user, "pass" : pass})
                 .success(function(data, status){
                     if (data['error'] === 0) {
-                        modal.hide();
+                        //modal.hide();
                         $scope.data.result = data['html'];
                         $scope.updateDate = data['updateDate'];
                         $scope.totalEarned = data['totalEarned'];
@@ -103,11 +103,11 @@
                         $scope.postalCode = data['postalCode'];
                         $scope.Title = data['title'];
                         
-                        modal.show();
-                        $scope.data.errorCode = 'Collecting your data...';
+                        //modal.show();
+                        //$scope.data.errorCode = 'Collecting your data...';
                         
                         $timeout(function(){
-                            modal.hide();
+                            //modal.hide();
                             myNavigator.pushPage('views/users/home.html', { animation : 'fade' });
                         },'2000');
                         
@@ -123,6 +123,10 @@
                     $scope.data.errorCode = 'Request failed' + data;
                     modal.show();
                 });
+            } else {
+                $timeout(function(){
+                    myNavigator.pushPage('views/login.html', { animation : 'fade' });
+                },'1000');
             }
         }    
         
@@ -206,7 +210,7 @@
             $window.localStorage.removeItem('userMpacc'); 
             $window.localStorage.removeItem('userPass'); 
             $scope.loggedIn = false;
-            myNavigator.pushPage('views/home.html', { animation : 'fade' });
+            myNavigator.pushPage('views/login.html', { animation : 'fade' });
         };
         
         //get category list

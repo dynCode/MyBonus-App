@@ -11,11 +11,18 @@
     <div class="topBanner" style="text-align: center;">
         <img src="images/app_header.png" class="otherPageBanImg" />
     </div>
-    <div class="page_display_text" style="font-size: 12px;">
-        <ons-list-item ng-repeat="trans in transList">
-            <p style="line-height: 20px;"><strong>Description</strong><br />{{trans.label}}</p>
-            <p style="line-height: 20px;"><strong>Date</strong><br />{{trans.transactionDate}}</p>
-            <p style="line-height: 20px;"><strong>Bucks</strong><br />{{trans.transactionPoints}}</p>
-        </ons-list-item>
+    <div class="page_display_text">
+        <ons-row align="top" style="padding: 5px 0px; border-bottom: 1px solid #eee;">
+            <ons-col><strong>Date</strong></ons-col>
+            <ons-col><strong>Partner</strong></ons-col>
+            <ons-col><strong>Description</strong></ons-col>
+            <ons-col><strong>Points</strong></ons-col>
+        </ons-row>
+        <ons-row align="top" style="padding: 5px 0px; border-bottom: 1px solid #eee;" ng-repeat="trans in transList">
+            <ons-col>{{trans.transactionDate}}</ons-col>
+            <ons-col>{{trans.Partner}}</ons-col>
+            <ons-col>{{trans.label}}</ons-col>
+            <ons-col>{{trans.transactionPoints}}</ons-col>
+        </ons-row>
     </div>
 </ons-page>

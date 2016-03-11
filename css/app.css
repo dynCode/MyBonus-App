@@ -109,30 +109,30 @@ select{
     color: #000;
     box-shadow: 0 5px 10px -6px black;
 }
-
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+/*
+::-webkit-input-placeholder { 
     color:    #000;
     font-weight: 500;
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+:-moz-placeholder { 
    color:    #000;
    opacity:  1;
    font-weight: 500;
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
+::-moz-placeholder { 
    color:    #000;
    opacity:  1;
    font-weight: 500;
 }
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder { 
    color:    #000;
    font-weight: 500;
 }
-:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+:placeholder-shown { 
     color:    #000;
     font-weight: 500;
 }
-
+*/
 .genderSelect {
     border: 0px solid #fff;
     /*border-radius: 10px;*/

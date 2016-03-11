@@ -17,7 +17,7 @@
             </ons-list-item>
         </div>
         <div ng-show="loggedIn">
-            <ons-list-item class="bottom-menu-item" ng-click="menu.close(); checkLogin();">
+            <ons-list-item class="bottom-menu-item" onclick="myNavigator.pushPage('views/users/card.html', { animation : 'slide' } )" ng-click="menu.close(); checkLogin();">
                 My Card <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
             </ons-list-item>
             <ons-list-item class="bottom-menu-item" onclick="myNavigator.pushPage('views/users/balance.html', { animation : 'slide' } )" ng-click="menu.close()">
@@ -26,7 +26,7 @@
             <ons-list-item class="bottom-menu-item" onclick="myNavigator.pushPage('views/users/Profile.html', { animation : 'slide' } )" ng-click="menu.close()">
                 My Profile <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
             </ons-list-item>
-            <ons-list-item class="bottom-menu-item" ng-click="logout(); menu.close();">
+            <ons-list-item class="bottom-menu-item" ng-click="menu.close(); logout();">
                 Log Out <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
             </ons-list-item>
         </div>
@@ -37,11 +37,14 @@
         <ons-list-item class="bottom-menu-item" onclick="myNavigator.pushPage('views/works.html', { animation : 'slide' } )" ng-click="menu.close()">
             How it works <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
         </ons-list-item>
-        <ons-list-item class="bottom-menu-item" ng-click="menu.close(); getCatList();">
+        <ons-list-item class="bottom-menu-item" ng-click=" getCatList(); menu.close();">
             Locate a partner <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
         </ons-list-item>
         <ons-list-item class="bottom-menu-item" onclick="myNavigator.pushPage('views/contact.html', { animation : 'slide' } )" ng-click="menu.close()">
             Contact Us <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
+        </ons-list-item>
+        <ons-list-item class="bottom-menu-item" onclick="myNavigator.pushPage('views/tandc.html', { animation : 'slide' } )" ng-click="menu.close()">
+            Terms and conditions <ons-icon icon="fa-chevron-circle-right" class="bottom-menu-item-icon"></ons-icon>
         </ons-list-item>
     </ons-list>
 </ons-page>
