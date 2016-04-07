@@ -8,7 +8,7 @@
         $scope.data = [];
         
         //API URL path
-        var apiPath = 'http://www.myitmanager.co.za/myBonusApp/api';
+        var apiPath = 'http://www.mybonus.co.za/myBonusApp/api';
         
         //Membder Data
         $scope.userMpacc = ''; 
@@ -116,12 +116,20 @@
                         $scope.data.result = data['html'];
                         $scope.data.errorCode = data['html'];
                         modal.show();
+                        $timeout(function(){
+                            modal.hide();
+                            myNavigator.pushPage('views/login.html', { animation : 'fade' });
+                        },'1000');
                     }
                 })
                 .error(function(data, status) {
                     modal.hide();
                     $scope.data.errorCode = 'Request failed' + data;
                     modal.show();
+                    $timeout(function(){
+                        modal.hide();
+                        myNavigator.pushPage('views/login.html', { animation : 'fade' });
+                    },'1000');
                 });
             } else {
                 $timeout(function(){
@@ -191,16 +199,28 @@
                         $scope.data.result = data['html'];
                         $scope.data.errorCode = data['html'];
                         modal.show();
+                        $timeout(function(){
+                            modal.hide();
+                            myNavigator.pushPage('views/login.html', { animation : 'fade' });
+                        },'1000');
                     }
                 })
                 .error(function(data, status) {
                     modal.hide();
                     $scope.data.errorCode = 'Request failed' + data + status;
                     modal.show();
+                    $timeout(function(){
+                        modal.hide();
+                        myNavigator.pushPage('views/login.html', { animation : 'fade' });
+                    },'1000');
                 });
             } else {
                 $scope.data.errorCode = 'Invalid Loyalty Number or Password.';
                 modal.show();
+                $timeout(function(){
+                    modal.hide();
+                    myNavigator.pushPage('views/login.html', { animation : 'fade' });
+                },'1000');
             }
         };
         
@@ -381,6 +401,7 @@
             var gender = $scope.data.reg_gender;
             var postalCode = $scope.data.reg_postalCode;
             var title = $scope.data.reg_title;
+            var reg_for =  $scope.data.reg_for;
             
             // set dob
             var iddob = IdNum.slice(0,6);
@@ -407,7 +428,7 @@
             if (Addline1 && City && CNumber && Email && Name && IdNum && LastName && Province && Suburb && gender && postalCode && title) {
                 modal.show();
                 $scope.data.errorCode = 'Processing, please wait...';
-                $http.post(apiPath + '/register.php', {"reqType" : "register", "line1" : Addline1, "line2" : Addline2, "line3" : Addline3, "city" : City, "telephoneNumber" : CNumber, "emailAddress" : Email, "givenNames" : Name, "nationalIdNum" : IdNum, "surname" : LastName, "province" : Province, "suburb" : Suburb, "gender" : gender, "postalCode" : postalCode, "title" : title, "dob" : dob})
+                $http.post(apiPath + '/register.php', {"reqType" : "register", "line1" : Addline1, "line2" : Addline2, "line3" : Addline3, "city" : City, "telephoneNumber" : CNumber, "emailAddress" : Email, "givenNames" : Name, "nationalIdNum" : IdNum, "surname" : LastName, "province" : Province, "suburb" : Suburb, "gender" : gender, "postalCode" : postalCode, "title" : title, "dob" : dob, "reg_for" : reg_for})
                 .success(function(data, status){
                     if (data['error'] == 0) {
                         modal.hide();
