@@ -2,8 +2,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.mybonus"
-        versionCode = "10" 
-        version   = "1.0">
+        versionCode = "101" 
+        version   = "1.0.1">
 
     <name>MyBonus</name>
 
@@ -79,23 +79,18 @@
         <preference name="fullscreen" value="true" />  
     </platform>
  
-    <feature name="http://api.phonegap.com/1.0/network" />
-    <feature name="http://api.phonegap.com/1.0/geolocation" />
-
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
     <!--
         <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     -->
+    <plugin name="cordova-plugin-camera">
+        <param name="CAMERA_USAGE_DESCRIPTION" value="We are using the Camera for uploading your till slip." />
+        <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We are using the Photo Library for uploading your till slip." />
+    </plugin>
+    <plugin name="cordova-plugin-device-orientation" />
+    <plugin name="cordova-plugin-geolocation" />
     <plugin name="cordova-plugin-whitelist" />
-    <gap:plugin name="com.phonegap.plugin.statusbar" />
-    <gap:config-file platform="ios" parent="UIStatusBarHidden">
-        <true/>
-    </gap:config-file>
-    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance">
-        <false/>
-    </gap:config-file>
-    <preference name="StatusBarOverlaysWebView" value="true" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />

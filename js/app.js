@@ -58,18 +58,24 @@
         
         //Profile Summary List
         $scope.proSumList = [];
+        
+        // distName drop down for registration
+        $scope.searchOk = false;
+        $scope.regCityDD = [];
 
         $scope.init = function() {
             var user = $window.localStorage.getItem('userMpacc'); 
             var pass = $window.localStorage.getItem('userPass'); 
+            var proid = $window.localStorage.getItem('userProId'); 
             
             if (user && pass) {
                 //modal.show();
                 //$scope.data.errorCode = 'Processing, please wait...';
-                $http.post(apiPath + '/login.php', {"reqType" : "login", "user" : user, "pass" : pass})
+                $http.post(apiPath + '/login.php', {"reqType" : "login", "user" : user, "pass" : pass, "proid" : proid})
                 .success(function(data, status){
                     if (data['error'] === 0) {
                         //modal.hide();
+                        console.log(data);
                         $scope.data.result = data['html'];
                         $scope.updateDate = data['updateDate'];
                         $scope.totalEarned = data['totalEarned'];
@@ -110,7 +116,15 @@
                             //modal.hide();
                             myNavigator.pushPage('views/users/home.html', { animation : 'fade' });
                         },'2000');
-                        
+                    } else if (data['error'] === 2) {    
+                        modal.hide();
+                        $scope.data.result = data['html'];
+                        $scope.data.errorCode = data['html'];
+                        modal.show();
+                        $timeout(function(){
+                            modal.hide();
+                            myNavigator.pushPage('views/register.html', { animation : 'fade' });
+                        },'2000');
                     } else {
                         modal.hide();
                         $scope.data.result = data['html'];
@@ -142,11 +156,12 @@
         $scope.LogIn = function() {
             var user = $scope.data.loyaltyNum;
             var pass = $scope.data.password;
+            var proid = $scope.data.procId;
             
             if (user && pass) {
                 modal.show();
                 $scope.data.errorCode = 'Processing, please wait...';
-                $http.post(apiPath + '/login.php', {"reqType" : "login", "user" : user, "pass" : pass})
+                $http.post(apiPath + '/login.php', {"reqType" : "login", "user" : user, "pass" : pass, "proid" : proid})
                 .success(function(data, status){
                     if (data['error'] === 0) {
                         modal.hide();
@@ -185,6 +200,7 @@
                         
                         $window.localStorage.setItem('userMpacc',user); 
                         $window.localStorage.setItem('userPass',pass); 
+                        $window.localStorage.setItem('userProId',proid); 
                         
                         modal.show();
                         $scope.data.errorCode = 'Collecting your data...';
@@ -193,6 +209,18 @@
                             modal.hide();
                             myNavigator.pushPage('views/users/home.html', { animation : 'fade' });
                         },'2000');
+                    } else if (data['error'] === 2) {    
+                        modal.hide();
+                        $scope.data.reg_Mpacc = user;
+                        ons.notification.alert({
+                            message: data['html'],
+                            title: 'Error',
+                            buttonLabel: 'Continue',
+                            animation: 'default',
+                            callback: function() {
+                                myNavigator.pushPage('views/register.html', { animation : 'fade' });
+                            }
+                        });
                         
                     } else {
                         modal.hide();
@@ -207,7 +235,8 @@
                 })
                 .error(function(data, status) {
                     modal.hide();
-                    $scope.data.errorCode = 'Request failed' + data + status;
+                    $scope.data.result = data['html'];
+                    $scope.data.errorCode = data['html'];
                     modal.show();
                     $timeout(function(){
                         modal.hide();
@@ -231,6 +260,48 @@
             $window.localStorage.removeItem('userPass'); 
             $scope.loggedIn = false;
             myNavigator.pushPage('views/login.html', { animation : 'fade' });
+        };
+        
+        //password reset function
+        $scope.resetPassword = function () {
+            var resetMpacc = $scope.data.reset.loyaltyNum;
+            
+            if (resetMpacc) {
+                modal.show();
+                $scope.data.errorCode = 'Processing, please wait...';
+                $http.post(apiPath + '/resetPassword.php', {"reqType" : "reset", "user" : resetMpacc})
+                .success(function(data, status){
+                    if (data['error'] === 0) {
+                        
+                    } else {
+                        modal.hide();
+                        $scope.data.result = data['html'];
+                        $scope.data.errorCode = data['html'];
+                        modal.show();
+                        $timeout(function(){
+                            modal.hide();
+                            myNavigator.pushPage('views/login.html', { animation : 'fade' });
+                        },'1000');
+                    }
+                })
+                .error(function(data, status) {
+                    modal.hide();
+                    $scope.data.result = data['html'];
+                    $scope.data.errorCode = data['html'];
+                    modal.show();
+                    $timeout(function(){
+                        modal.hide();
+                        myNavigator.pushPage('views/login.html', { animation : 'fade' });
+                    },'1000');
+                });
+            } else {
+                $scope.data.errorCode = 'Invalid Loyalty Number or Password.';
+                modal.show();
+                $timeout(function(){
+                    modal.hide();
+                    myNavigator.pushPage('views/login.html', { animation : 'fade' });
+                },'1000');
+            }
         };
         
         //get category list
@@ -333,7 +404,8 @@
             });
         };
         
-        //check ID Number
+        //check ID Number (disabled for now)
+        /*
         $scope.checkId = function () {
             var idVal = $scope.data.reg_IdNumber;
             var IDLen = idVal.length;
@@ -384,8 +456,70 @@
                 return true;
             }
         };
+        */
         
         //Registration of user
+        // (New Way)
+        $scope.registerMe = function () {
+            var City = $scope.data.reg_City;
+            var CNumber = $scope.data.reg_ContactNumber;
+            var Email = $scope.data.reg_EmailAddress;
+            var Name = $scope.data.reg_FirstName;
+            var LastName = $scope.data.reg_LastName;
+            var Province = $scope.data.reg_Province;
+            var gender = $scope.data.reg_gender;
+            var title = $scope.data.reg_title;
+            var dobY = $scope.data.reg_year;
+            var dobM = $scope.data.reg_month;
+            var dobD = $scope.data.reg_day;
+            var mpacc = $scope.data.reg_Mpacc;
+
+            var dob = dobY+'-'+dobM+'-'+dobD;
+            
+            var regsPath;
+            
+            if(mpacc) {
+                regsPath = apiPath + '/registerMpacc.php';
+            } else {
+                regsPath = apiPath + '/register.php';
+            }
+            
+            if ( CNumber && Email && Name && LastName && gender && title ) {
+                modal.show();
+                console.log({"reqType" : "register", "city" : City, "telephoneNumber" : CNumber, "emailAddress" : Email, "givenNames" : Name, "surname" : LastName, "province" : Province, "gender" : gender, "title" : title, "dob" : dob, "MPacc" : mpacc});
+                $scope.data.errorCode = 'Processing, please wait...';
+                $http.post(regsPath, {"reqType" : "register", "city" : City, "telephoneNumber" : CNumber, "emailAddress" : Email, "givenNames" : Name, "surname" : LastName, "province" : Province, "gender" : gender, "title" : title, "dob" : dob, "MPacc" : mpacc })
+                .success(function(data, status){
+                    if (data['error'] === 0) {
+                        modal.hide();
+                        $scope.data.result = data['html'];
+                        
+                        $window.localStorage.setItem('userMpacc',data['userMpacc']); 
+                        $window.localStorage.setItem('userPass',data['userMpacc']); 
+                        
+                        $timeout(function(){
+                            modal.hide();
+                            $scope.init();
+                        },'2000');
+                        
+                    } else {
+                        modal.hide();
+                        $scope.data.result = data['html'];
+                        $scope.data.errorCode = data['html'];
+                        modal.show();
+                    }
+                })
+                .error(function(data, status) {
+                    modal.hide();
+                    $scope.data.errorCode = 'Request failed' + data;
+                    modal.show();
+                });
+            } else {
+                $scope.data.errorCode = 'Please complete all the flieds.';
+                modal.show();
+            }
+        };
+        /* OLD WAY
         $scope.registerMe = function () {
             var Addline1 = $scope.data.reg_Addressline1;
             var Addline2 = $scope.data.reg_Addressline2;
@@ -439,7 +573,7 @@
                         
                         $timeout(function(){
                             modal.hide();
-                            myNavigator.pushPage('views/home.html', { animation : 'fade' });
+                            $scope.init();
                         },'2000');
                         
                     } else {
@@ -459,6 +593,7 @@
                 modal.show();
             }
         };
+        */
         
         $scope.SetupUpdate = function() {
             $scope.data.up_Addline1 = $scope.Addressline1;
@@ -490,41 +625,15 @@
             var City = $scope.data.up_City;
             var CNumber = $scope.data.up_CNumber;
             var Email = $scope.data.up_Email;
-            var Name = $scope.data.up_Name;
-            var IdNum = $scope.data.up_IdNum;
-            var LName = $scope.data.up_LName;
             var Prov = $scope.data.up_Prov;
-            var Sub = $scope.data.up_Sub;
-            var sex = $scope.data.up_sex;
             var pCode = $scope.data.up_pCode;
-            var tit = $scope.data.up_title;
             
-            // set dob
-            var iddob = IdNum.slice(0,6);
-            var dobYear = iddob.slice(0,2);
-            var dobMonth = iddob.slice(2,4);
-            var dobDay = iddob.slice(4,6);
-
-            var d = new Date();
-            var n = d.getFullYear();
-            var str = n.toString();
-            var y = str.slice(2,4);    
-
-            if (dobYear >= '00' && dobYear <= y) {
-                dobYear = '20'+dobYear;
-            } else {
-                dobYear = '19'+dobYear;
-            }
-
-            var dob = dobYear+'-'+dobMonth+'-'+dobDay;
-            
-            
-            if (Addline1 && City && CNumber && Email && Name && IdNum && LName && Prov && Sub && sex && pCode && tit) {
+            if (CNumber && Email) {
                 modal.show();
                 $scope.data.errorCode = 'Processing, please wait...';
-                $http.post(apiPath + '/update.php', {"reqType" : "update", "line1" : Addline1, "line2" : Addline2, "line3" : Addline3, "city" : City, "telephoneNumber" : CNumber, "emailAddress" : Email, "givenNames" : Name, "nationalIdNum" : IdNum, "surname" : LName, "province" : Prov, "suburb" : Sub, "gender" : sex, "postalCode" : pCode, "title" : tit, "dob" : dob, "user" : user, "pass" : pass, "sessionId" : $scope.sessionId})
+                $http.post(apiPath + '/update.php', {"reqType" : "update", "line1" : Addline1, "line2" : Addline2, "line3" : Addline3, "city" : City, "telephoneNumber" : CNumber, "emailAddress" : Email, "province" : Prov, "postalCode" : pCode, "user" : user, "pass" : pass, "sessionId" : $scope.sessionId})
                 .success(function(data, status){
-                    if (data['error'] == 0) {
+                    if (data['error'] === 0) {
                         modal.hide();
                         $scope.data.result = data['html'];
                         $scope.data.errorCode = data['html'];
@@ -548,6 +657,88 @@
                     $scope.data.errorCode = 'Request failed' + data;
                     modal.show();
                 });
+            } else {
+                $scope.data.errorCode = 'Please complete all the flieds.';
+                modal.show();
+            }
+        };
+        
+        // get dist code for registration
+        $scope.getDistCode = function () {
+            $scope.searchOk = false;
+            $scope.regCityDD = [];
+            var provCode;
+            
+            if (undefined != this.data.reg_Province) {
+                console.log('Province',this.data.reg_Province);
+                var provCode = this.data.reg_Province;
+            } else {
+                console.log('Province',this.data.up_Prov);
+                var provCode = this.data.up_Prov;
+            }
+            
+            modal.show();
+            $scope.data.errorCode = 'Processing, please wait...';
+            $http.post(apiPath + '/provlist.php', {"provCode" : provCode})
+            .success(function(data, status){
+                modal.hide();
+                console.log('City Data',data);
+                $scope.searchOk = true;
+                $scope.regCityDD = data;
+            })
+            .error(function(data, status) {
+                modal.hide();
+                $scope.data.errorCode = 'Request failed';
+                modal.show();
+            });
+        };
+        
+        // user passward change request
+        $scope.passwordUpdate = function () {
+            var password = $scope.data.password;
+            var re_paswword = $scope.data.password_r;
+            var cur_pass = $window.localStorage.getItem('userPass');
+            
+            if (password && re_paswword) {
+                if (password.length >= 6) {
+                    if (password === re_paswword) {
+                        modal.show();
+                        $scope.data.errorCode = 'Processing, please wait...';
+                        
+                        console.log("password:" + password +", oldpassword:" + cur_pass + ", sessionId:" + $scope.sessionId + ", member:" + $scope.userMpacc + ", fname:" + $scope.FirstName + ", telNum"  + $scope.ContactNumber);
+                        
+                        $http.post(apiPath + '/updatePassword.php', {"password" : password, "oldpassword" : cur_pass, "sessionId" : $scope.sessionId, "member" : $scope.userMpacc, "fname" : $scope.FirstName, "telNum" :$scope.ContactNumber})
+                        .success(function(data, status){
+                            if (data['error'] === 0) {
+                                modal.hide();
+                                $scope.data.result = data['html'];
+                                $scope.data.errorCode = data['html'];
+                                modal.show();
+                                $timeout(function(){
+                                    modal.hide();
+                                    $scope.init();
+                                },'2000');
+
+                            } else {
+                                modal.hide();
+                                $scope.data.result = data['html'];
+                                $scope.data.errorCode = data['html'];
+                                modal.show();
+                            }
+                        })
+                        .error(function(data, status) {
+                            modal.hide();
+                            $scope.data.errorCode = 'Request failed';
+                            modal.show();
+                        });
+                    } else {
+                        $scope.data.errorCode = 'Password did not match.';
+                        modal.show();
+                    }
+                } else {
+                    $scope.data.errorCode = 'Password not long enough.';
+                    modal.show();
+                }
             } else {
                 $scope.data.errorCode = 'Please complete all the flieds.';
                 modal.show();
@@ -583,3 +774,12 @@
         */
     });
 })();
+
+// regular JavaScript
+
+function moveOnMax(field,nextFieldID,ml) { 
+    var fl = document.getElementById(field).value.length;
+    if(fl >= ml) { 
+        document.getElementById(nextFieldID).focus(); 
+    } 
+}

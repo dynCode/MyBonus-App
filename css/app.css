@@ -98,6 +98,9 @@
 
 input[type=text],
 input[type=password],
+input[type=date],
+input[type=email],
+input[type=number],
 select{
     height: 52px;
     padding-top: 10px;

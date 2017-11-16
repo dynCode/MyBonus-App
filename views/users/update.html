@@ -14,46 +14,7 @@
     <div style="padding: 0 20px;">
         <h4 style="padding-left: 20px;">Update Profile</h4>
         <div class="formarea">
-            <div class="form-row">
-                <input type="text" class="text-input--underbar width-full" ng-model="data.up_Name" >
-            </div>
-
-            <div class="form-row">
-                <input type="text" class="text-input--underbar width-full" ng-model="data.up_LName" >
-            </div>
-
-            <div class="form-row">
-                <div class="button-bar genderSelect" style="width:100%;">
-                    <label class="button-bar__item">
-                        <input type="radio" name="gender" ng-model="data.up_sex" value="M">
-                        <button class="button-bar__button">Male</button>
-                    </label>
-                    <label class="button-bar__item">
-                        <input type="radio" name="gender" ng-model="data.up_sex" value="F">
-                        <button class="button-bar__button">Female</button>
-                    </label>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <select ng-model="data.up_title" style="width:100%;">
-                    <option value="">Select your Tilte</option>
-                    <option value="MR">Mr</option>
-                    <option value="MRS">Mrs</option>
-                    <option value="MISS">Miss</option>
-                    <option value="MS">Ms</option>
-                    <option value="PROF">Professor</option>
-                    <option value="DOCT">Doctor</option>
-                    <option value="HE">His Excellency</option>
-                    <option value="HON">Honorable</option>
-                    <option value="OTHE">Other</option>
-                </select>
-            </div>
-
-            <div class="form-row">
-                <input type="text" class="text-input--underbar width-full" ng-model="data.up_IdNum" ng-blur="checkId()" placeholder="Id Number">
-            </div>
-
+            
             <div class="form-row">
                 <input type="text" class="text-input--underbar width-full" ng-model="data.up_Email" placeholder="Email Address">
             </div>
@@ -83,11 +44,7 @@
             </div>
             
             <div class="form-row">
-                <input type="text" class="text-input--underbar width-full" ng-model="data.up_City" placeholder="City">
-            </div>
-            
-            <div class="form-row">
-                <select ng-model="data.up_Prov" style="width:100%;">
+                <select ng-model="data.up_Prov" ng-change="getDistCode()" style="width:100%;">
                     <option value="">Select your Province</option>
                     <option value="EASC">Eastern Cape</option>
                     <option value="FREE">Free State</option>
@@ -102,8 +59,14 @@
                 </select>
             </div>
             
+            <div class="form-row">
+                <select ng-model="data.up_City" ng-options="regCity.distname for regCity in regCityDD track by regCity.distcode" style="width:100%;">
+                    <option value="">Select a City</option>
+                </select>
+            </div>
+            
             <div class="vspc form-row" style="margin-bottom: 20px;">
-                <ons-button modifier="large" class="reg-button" ng-click="updateMe()">Update</ons-button>
+                <ons-button modifier="large" class="reg-button" ng-click="updateMe()"><img src="images/icons/update.png"/> Update</ons-button>
             </div>
         </div>
     </div>

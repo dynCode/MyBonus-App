@@ -18,12 +18,15 @@
         </div>
     </div>
     <br />
-    <div style="padding: 0 20px;">
+    <div style="padding: 0 20px; margin-bottom: 20px;">
         
         <ons-button modifier="large" class="reg-button" onclick="myNavigator.pushPage('views/users/balance.html', { animation : 'slide' } )"><img src="images/icons/ballance.png"/> My Balance</ons-button>
         <br>
         <ons-button modifier="large" class="reg-button" onclick="myNavigator.pushPage('views/users/profile.html', { animation : 'slide' } )"><img src="images/icons/profile.png"/> My Profile</ons-button>
         <br>
-        <ons-button modifier="large" class="reg-button" ng-click="getTransList();"><img src="images/icons/transactions.png"/> Last 10 Transaction</ons-button>
+        <ons-button modifier="large" class="reg-button" ng-click="getTransList();"><img src="images/icons/transactions.png"/> Last 10 Transactions</ons-button>
+        <br>
+        <ons-button modifier="large" class="reg-button" onclick="window.open('http://thebonusshop.co.za/', '_blank');" target="_blank"><img src="images/icons/shopping_cart.png"/> Redeem Bucks</ons-button>
+        <br>
     </div>
 </ons-page>
