@@ -2,8 +2,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.mybonus"
-        versionCode = "101" 
-        version   = "1.0.1">
+        versionCode = "102" 
+        version   = "1.0.2">
 
     <name>MyBonus</name>
 
@@ -16,7 +16,7 @@
     <author href="http://www.myitmanager.co.za" email="support@myitmanager.co.za">
         My IT Manager
     </author>
-
+    <preference name="phonegap-version" value="cli-8.0.0" />
     <platform name="ios" >
         <preference name="orientation" value="portrait" />
         <preference name="fullscreen" value="true" />  
@@ -35,32 +35,47 @@
         <!-- iPad -->
         <icon src="res/icons/ios/icon-76.png" width="76" height="76" />
         <icon src="res/icons/ios/icon-76@2x.png" width="152" height="152" />
+        <icon src="res/icons/ios/icon-83.5@2x.png" width="167" height="167" />
 
+        <!-- Settings Icon -->
+        <icon src="res/icons/ios/icon-small.png" width="29" height="29" />
+        <icon src="res/icons/ios/icon-small@2x.png" width="58" height="58" />
+        <icon src="res/icons/ios/icon-small@3x.png" width="87" height="87" />
+        
         <!-- Spotlight Icon -->
         <icon src="res/icons/ios/icon-40.png" width="40" height="40" />
         <icon src="res/icons/ios/icon-40@2x.png" width="80" height="80" />
+        <icon src="res/icons/ios/icon-40@3x.png" width="120" height="120" />
 
         <!-- iPhone / iPod Touch -->
-        <icon src="res/icons/ios/icon.png" width="57" height="57" />
+        <icon src="res/icons/ios/icon-57.png" width="57" height="57" />
         <icon src="res/icons/ios/icon@2x.png" width="114" height="114" />
 
         <!-- iPad -->
         <icon src="res/icons/ios/icon-72.png" width="72" height="72" />
         <icon src="res/icons/ios/icon-72@2x.png" width="144" height="144" />
 
-        <!-- iPhone Spotlight and Settings Icon -->
-        <icon src="res/icons/ios/icon-small.png" width="29" height="29" />
-        <icon src="res/icons/ios/icon-small@2x.png" width="58" height="58" />
-
         <!-- iPad Spotlight and Settings Icon -->
         <icon src="res/icons/ios/icon-50.png" width="50" height="50" />
         <icon src="res/icons/ios/icon-50@2x.png" width="100" height="100" />
         
-        <!-- Spalsh screens -->
-        <splash src="res/screen/ios/screen-iphone-portrait.png" width="320" height="480" />
-        <splash src="res/screen/ios/screen-iphone-portrait-2x.png" width="640" height="960" />
-        <splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" height="1136" />
-        <splash src="res/screen/ios/screen-ipad-portrait.png" width="768" height="1024" />
+        <icon src="res/icons/ios/icon.png" width="1024" height="1024" />
+        <!-- Config usage update -->
+        <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
+            <string>We are using the Camera for uploading your till slip.</string>
+        </edit-config>
+        <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+            <string>We are using the Camera for uploading your till slip.</string>
+        </edit-config>
+        <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+            <string>We are using your location to display partner close by.</string>
+        </edit-config>
+        <edit-config target="NSLocationAlwaysUsageDescription" file="*-Info.plist" mode="merge">
+            <string>We are using your location to display partner close by.</string>
+        </edit-config>
+        <edit-config target="NSLocationAlwaysAndWhenInUsageDescription" file="*-Info.plist" mode="merge">
+            <string>We are using your location to display partner close by.</string>
+        </edit-config>
     </platform>
     <platform name="android" >
         <preference name="orientation" value="portrait" />
@@ -69,14 +84,8 @@
         <icon src="res/icons/android/icon-48-mdpi.png" qualifier="mdpi" />
         <icon src="res/icons/android/icon-72-hdpi.png" qualifier="hdpi" />
         <icon src="res/icons/android/icon-96-xhdpi.png" qualifier="xhdpi" />
-        <splash src="res/screen/android/screen-ldpi-portrait.png" qualifier="port-ldpi" />
-        <splash src="res/screen/android/screen-mdpi-portrait.png" qualifier="port-mdpi" />
-        <splash src="res/screen/android/screen-hdpi-portrait.png" qualifier="port-hdpi" />
-        <splash src="res/screen/android/screen-xhdpi-portrait.png" qualifier="port-xhdpi" />
-    </platform>
-    <platform name="winphone" >
-        <preference name="orientation" value="portrait" />
-        <preference name="fullscreen" value="true" />  
+        <icon src="res/icons/android/icon-144-xxhdpi.png" density="xxhdpi" />
+        <icon src="res/icons/android/icon-192-xxxhdpi.png" density="xxxhdpi" />
     </platform>
  
     <!-- Third party plugins -->
@@ -84,13 +93,20 @@
     <!--
         <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     -->
-    <plugin name="cordova-plugin-camera">
-        <param name="CAMERA_USAGE_DESCRIPTION" value="We are using the Camera for uploading your till slip." />
-        <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We are using the Photo Library for uploading your till slip." />
+    
+    <plugin name="cordova-plugin-camera" spec="~2.4.1">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="We are using the Camera for uploading your till slip." />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We are using the Camera for uploading your till slip." />
     </plugin>
+    <plugin name="cordova-plugin-ios-camera-permissions" spec="1.0.3" >
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="We are using the Camera for uploading your till slip." />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We are using the Camera for uploading your till slip." />
+    </plugin>
+    
     <plugin name="cordova-plugin-device-orientation" />
     <plugin name="cordova-plugin-geolocation" />
     <plugin name="cordova-plugin-whitelist" />
+    <plugin name="cordova-plugin-x-socialsharing" source="npm" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
